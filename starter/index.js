@@ -87,13 +87,6 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-var totalMonths = finances.length
-console.log("Total Months:  " + totalMonths);
+var totalMonths = finances.length;
 
-var totalChange = 0;
-
-var increase = 0;
-
-var decrease = finances[0][1];
-
-var average = [0]
+var totalProfitLosses = finances.reduce((acc, curr) => acc + curr[1], 0);
