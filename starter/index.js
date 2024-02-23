@@ -106,6 +106,26 @@ var averageChange = (sumChanges / (totalMonths - 1)).toFixed(2);
 // Finding greatest increase and decrease
 var greatestIncrease = Math.max(...changes);
 var greatestDecrease = Math.min(...changes);
+
 // Corresponding dates for greatest increase and decrease
 var increaseIndex = changes.indexOf(greatestIncrease) + 1;
 var decreaseIndex = changes.indexOf(greatestDecrease) + 1;
+var greatestIncreaseDate = finances[increaseIndex][0];
+var greatestDecreaseDate = finances[decreaseIndex][0];
+
+
+console.log("Financial Analysis");
+console.log("------------------");
+console.log("Total Months:", totalMonths);
+console.log("Total: $" + totalProfitLosses);
+console.log("Average Change: $" + averageChange);
+console.log(
+  "Greatest Increase in Profits/Losses:",
+  greatestIncreaseDate,
+  "($" + greatestIncrease + ")"
+);
+console.log(
+  "Greatest Decrease in Profits/Losses:",
+  greatestDecreaseDate,
+  "($" + greatestDecrease + ")"
+);
