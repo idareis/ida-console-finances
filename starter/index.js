@@ -87,9 +87,18 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-var totalMonths = finances.length
-console.log("Total Months:  " + totalMonths);
+//Total number of months
+var totalMonths = finances.length;
+//Total amount of profit/losses over the entire period
+var totalProfitLosses = finances.reduce((acc, curr) => acc + curr[1], 0);
 
-var totalChange = 0;
+//Arrays to store changes in profit/losses month to month
+var changes = [];
+for (var i = 1; i < finances.length; i++) {
+  var change = finances[i][1] - finances[i - 1][1];
+  changes.push(change);
+}
 
-var increase = 0;
+//Calculate average change
+var sumChanges = changes.reduce((acc, val) => acc + val, 0);
+var averageChange = (sumChanges / (totalMonths - 1)).toFixed(2);
