@@ -102,3 +102,10 @@ for (var i = 1; i < finances.length; i++) {
 //Calculate average change
 var sumChanges = changes.reduce((acc, val) => acc + val, 0);
 var averageChange = (sumChanges / (totalMonths - 1)).toFixed(2);
+
+// Finding greatest increase and decrease
+var greatestIncrease = Math.max(...changes);
+var greatestDecrease = Math.min(...changes);
+// Corresponding dates for greatest increase and decrease
+var increaseIndex = changes.indexOf(greatestIncrease) + 1;
+var decreaseIndex = changes.indexOf(greatestDecrease) + 1;
