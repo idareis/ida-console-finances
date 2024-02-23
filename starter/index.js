@@ -93,3 +93,7 @@ console.log("Total Months:  " + totalMonths);
 var totalChange = 0;
 
 var increase = 0;
+
+var decrease = finances[0][1];
+
+var average = [0]
